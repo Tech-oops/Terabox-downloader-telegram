@@ -9,10 +9,10 @@ async function main() {
   bot.start(async (ctx) => {
     try {
       ctx.reply(
-        `Hi ${ctx.message.from.first_name},\n\nI can Download Files from Terabox.\n\nMade with ❤️ by @botcodes123\n\nSend any terabox link to download.`,
+        `Hi ${ctx.message.from.first_name},\n\nI can Download Files from Terabox.\n\nMade with ❤️\n\nSend any terabox link to download.`,
         Markup.inlineKeyboard([
-          Markup.button.url(" Channel", "https://t.me/botcodes123"),
-          Markup.button.url("Report bug", "https://t.me/Armanidrisi_bot"),
+          Markup.button.url(" Channel", "https://t.me/Terabox_file_downloader_bot"),
+          Markup.button.url("Report bug", "https://t.me/Terabox_file_downloader_bot"),
         ]),
       );
     } catch (e) {
@@ -35,7 +35,7 @@ async function main() {
         const details = await getDetails(messageText);
         if (details && details.direct_link) {
           try {
-            ctx.reply(`Sending Files Please Wait.!!`);
+            ctx.reply(`File is being downloaded Please Wait.!!`);
             sendFile(details.direct_link, ctx);
           } catch (e) {
             console.error(e); // Log the error for debugging
